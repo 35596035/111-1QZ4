@@ -26,8 +26,9 @@ namespace _111_1QZ4
                     "User ID = sa; Password = 12345";
             try
             {
+                //SqlConnection SQL連線物件名稱 = new SqlConnection(連線字串或連線字串變數);
                 SqlConnection o_Str = new SqlConnection(s_Str);
-                o_Str.Open();
+                o_Str.Open();//開起資料庫
                 //SQL指令到連結物件o_Str裡也就是(s_Str)再給o_Cmd
                 string s_sql = "select * from Users";
                 SqlCommand o_Cmd = new SqlCommand(s_sql, o_Str);
@@ -42,7 +43,7 @@ namespace _111_1QZ4
                     }
                     Response.Write("<br />");
                 }
-                o_Str.Close();
+                o_Str.Close();//關閉資料庫
             }
             catch (Exception o_Exc)
             {
